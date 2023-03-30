@@ -1,0 +1,9 @@
+{
+	"embed_description": "Server Status",
+	"embed_empty_players": "Empty",
+	"embed_players": "Players",
+	"embed_version": "Version",
+	"embed_online": "Online",
+	"embed_state": "State:",
+	"embed_server_is_down": "Server is down or starting up"
+}

@@ -1,0 +1,9 @@
+{
+	"embed_description": "Статус сервера",
+	"embed_empty_players": "Пусто",
+	"embed_players": "Игроки",
+	"embed_version": "Версия",
+	"embed_online": "Онлаин",
+	"embed_state": "Состояние:",
+	"embed_server_is_down": "Сервер выключен или запускаеться"
+}
