@@ -1,11 +1,11 @@
 
 # Minecraft status
 
-A fairly convenient bot to get information about the minecraft server without going to the server itself
+Rather handy bot to get information about the server minecraft without going to the server itself
 
 
 ## Installation
-Before installing, make sure you have configured the 
+Before installing, make sure you set up the bot
 
 Clone the project
 ```bash
@@ -20,7 +20,7 @@ Start
 python bot.py
 ```
 
-## Recommendation
+## Recommendations
 ```bash
 Python3.x
 ```
