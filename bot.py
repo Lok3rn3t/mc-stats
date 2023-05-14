@@ -81,7 +81,7 @@ async def stats(ctx):
         embed.add_field(name=translations['embed_players'],value=f"{players(mc)}", inline = False)
         embed.set_footer(text=f"{translations['embed_state']} 🔵")
         await ctx.send(embed = embed) 
-    except socket.gaierror:
+    except socket.gaierror or ConnectionRefusedError:
         embed = discord.Embed(color = 0xff0051, title = translations['embed_description'])
         embed.set_thumbnail(url="https://i.gifer.com/origin/06/06ace2e9b4e856f6955f230594f2998e.gif")
         embed.add_field(name=translations['embed_server_is_down'],value="", inline = True)

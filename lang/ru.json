@@ -5,5 +5,5 @@
 	"embed_version": "Версия",
 	"embed_online": "Онлаин",
 	"embed_state": "Состояние:",
-	"embed_server_is_down": "Сервер выключен или запускаеться"
+	"embed_server_is_down": "Сервер выключен или недоступен"
 }
