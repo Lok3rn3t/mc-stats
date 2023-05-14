@@ -26,7 +26,6 @@ def ping(ip, port):
                 raise ValueError('var_int too big')
             if not (k & 0x80):
                 return i
-
     sock = socket.socket()
     sock.connect((ip, port))
     try:
@@ -45,7 +44,6 @@ def ping(ip, port):
                 raise ValueError('negative length read')
             else:
                 raise ValueError('invalid response %s' % sock.read(length))
-
         sock.recv(1)  # packet type, 0 for pings
         length = read_var_int()  # string length
         data = b''
@@ -53,10 +51,7 @@ def ping(ip, port):
             chunk = sock.recv(length - len(data))
             if not chunk:
                 raise ValueError('connection abborted')
-
             data += chunk
-
-        #return Server(json.loads(data))
         return json.loads(data)
     finally:
         sock.close()
@@ -81,11 +76,17 @@ async def stats(ctx):
         embed.add_field(name=translations['embed_players'],value=f"{players(mc)}", inline = False)
         embed.set_footer(text=f"{translations['embed_state']} 🔵")
         await ctx.send(embed = embed) 
-    except socket.gaierror or ConnectionRefusedError:
+    except socket.gaierror:
         embed = discord.Embed(color = 0xff0051, title = translations['embed_description'])
         embed.set_thumbnail(url="https://i.gifer.com/origin/06/06ace2e9b4e856f6955f230594f2998e.gif")
         embed.add_field(name=translations['embed_server_is_down'],value="", inline = True)
         embed.set_footer(text=f"{translations['embed_state']} 🔴")
         await ctx.send(embed = embed) 
-        
+    except ConnectionRefusedError:
+        embed = discord.Embed(color = 0xff0051, title = translations['embed_description'])
+        embed.set_thumbnail(url="https://i.gifer.com/origin/06/06ace2e9b4e856f6955f230594f2998e.gif")
+        embed.add_field(name=translations['embed_server_is_down'],value="", inline = True)
+        embed.set_footer(text=f"{translations['embed_state']} 🔴")
+        await ctx.send(embed = embed) 
+
 bot.run(config.token)
