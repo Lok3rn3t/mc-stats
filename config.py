@@ -1,4 +1,4 @@
-language = "ru" # language to be used (en, ru)
+language = "en" # language to be used (en, ru)
 token = "" # bot token
 prefix = "-" # bot prefix
 ip = "127.0.0.1" # minecraft server ip
